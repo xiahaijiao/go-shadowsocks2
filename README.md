@@ -1,3 +1,41 @@
+#
+```bash
+
+   yum install -y golang
+   yum install -y yum-utils wget telnet net-tools zip  
+   yum install -y gcc gcc-c++  make cmake  git boost-devel libarchive libX11
+   make
+   go-shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:your-password@:8488' -verbose
+./shadowsocks2-linux -s 'ss://AEAD_CHACHA20_POLY1305:123456@:10086' -verbose
+
+arm
+./shadowsocks2-linux-arm64 -s 'ss://AEAD_CHACHA20_POLY1305:123456@:10086' -verbose
+
+
+centos
+firewall-cmd --add-port=10086/tcp --permanent
+firewall-cmd --reload
+firewall-cmd --zone=public --list-ports
+
+
+ubuntu
+ufw allow 10086/tcp
+ufw show added
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 # go-shadowsocks2
 
 A fresh implementation of Shadowsocks in Go.
