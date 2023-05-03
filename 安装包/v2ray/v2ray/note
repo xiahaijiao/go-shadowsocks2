@@ -1,0 +1,248 @@
+
+[root@Server-72d26e11-5ed2-4f04-adfb-bc9c4911a4c3 ABCDE]# bash -x install-release.sh 
++ DAT_PATH=/usr/local/share/v2ray
++ JSON_PATH=/usr/local/etc/v2ray
++ main
++ check_if_running_as_root
++ [[ 0 -ne 0 ]]
++ identify_the_operating_system_and_architecture
+++ uname
++ [[ Linux == \L\i\n\u\x ]]
++ case "$(uname -m)" in
+++ uname -m
++ MACHINE=64
++ [[ ! -f /etc/os-release ]]
++ [[ -f /.dockerenv ]]
++ grep -q 'docker\|lxc' /proc/1/cgroup
++ [[ -d /run/systemd/system ]]
++ true
+++ type -P apt
++ [[ -n '' ]]
+++ type -P dnf
++ [[ -n /usr/bin/dnf ]]
++ PACKAGE_MANAGEMENT_INSTALL='dnf -y install'
++ PACKAGE_MANAGEMENT_REMOVE='dnf remove'
++ package_provide_tput=ncurses
++ judgment_parameters
++ [[ 0 -gt 0 ]]
++ install_software ncurses tput
++ package_name=ncurses
++ file_to_detect=tput
++ type -P tput
++ return
+++ tput setaf 1
++ red=''
+++ tput setaf 2
++ green=''
+++ tput setaf 6
++ aoi=''
+++ tput sgr0
++ reset=''
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
++ [[ '' -eq 1 ]]
+++ mktemp -d
++ TMP_DIRECTORY=/tmp/tmp.KL6SmsUjfF
++ ZIP_FILE=/tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip
++ [[ '' -eq 1 ]]
++ install_software curl curl
++ package_name=curl
++ file_to_detect=curl
++ type -P curl
++ return
++ get_version
++ [[ -n '' ]]
++ [[ -f /usr/local/bin/v2ray ]]
+++ mktemp
++ TMP_FILE=/tmp/tmp.RweWtBw8zi
++ curl -x '' -sS -i -H 'Accept: application/vnd.github.v3+json' -o /tmp/tmp.RweWtBw8zi https://api.github.com/repos/v2fly/v2ray-core/releases/latest
+++ type -P curl
++ /usr/bin/curl -L -q --retry 5 --retry-delay 10 --retry-max-time 60 -x '' -sS -i -H 'Accept: application/vnd.github.v3+json' -o /tmp/tmp.RweWtBw8zi https://api.github.com/repos/v2fly/v2ray-core/releases/latest
+++ awk 'NR==1 {print $2}' /tmp/tmp.RweWtBw8zi
++ HTTP_STATUS_CODE=200
++ [[ 200 -lt 200 ]]
++ [[ 200 -gt 299 ]]
+++ sed 'y/,/\n/' /tmp/tmp.RweWtBw8zi
+++ grep tag_name
+++ awk -F '"' '{print $4}'
++ RELEASE_LATEST=v5.4.1
++ rm /tmp/tmp.RweWtBw8zi
++ RELEASE_VERSION=v5.4.1
++ [[ v5.4.1 != '' ]]
++ RELEASE_VERSIONSION_NUMBER=5.4.1
++ RELEASE_MAJOR_VERSION_NUMBER=5
+++ echo 5.4.1
+++ awk -F . '{print $2}'
++ RELEASE_MINOR_VERSION_NUMBER=4
++ RELEASE_MINIMUM_VERSION_NUMBER=1
+++ echo ''
+++ sed 's/-.*//'
++ CURRENT_VERSION_NUMBER=
++ CURRENT_MAJOR_VERSION_NUMBER=
+++ echo ''
+++ awk -F . '{print $2}'
++ CURRENT_MINOR_VERSION_NUMBER=
++ CURRENT_MINIMUM_VERSION_NUMBER=
++ [[ 5 -gt '' ]]
++ return 0
++ NUMBER=0
++ [[ 0 -eq 0 ]]
+++ uname -m
++ echo 'info: Installing V2Ray v5.4.1 for x86_64'
+info: Installing V2Ray v5.4.1 for x86_64
++ download_v2ray
++ DOWNLOAD_LINK=https://github.com/v2fly/v2ray-core/releases/download/v5.4.1/v2ray-linux-64.zip
++ echo 'Downloading V2Ray archive: https://github.com/v2fly/v2ray-core/releases/download/v5.4.1/v2ray-linux-64.zip    ,  /tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip'
+Downloading V2Ray archive: https://github.com/v2fly/v2ray-core/releases/download/v5.4.1/v2ray-linux-64.zip    ,  /tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip
++ cp v2ray-linux-64.zip /tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip
++ [[ 0 -eq 1 ]]
++ install_software unzip unzip
++ package_name=unzip
++ file_to_detect=unzip
++ type -P unzip
++ return
++ decompression /tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip
++ unzip -q /tmp/tmp.KL6SmsUjfF/v2ray-linux-64.zip -d /tmp/tmp.KL6SmsUjfF
++ echo 'info: Extract the V2Ray package to /tmp/tmp.KL6SmsUjfF and prepare it for installation.'
+info: Extract the V2Ray package to /tmp/tmp.KL6SmsUjfF and prepare it for installation.
++ systemctl list-unit-files
++ grep -qw v2ray
++ install_v2ray
++ install_file v2ray
++ NAME=v2ray
++ [[ v2ray == \v\2\r\a\y ]]
++ install -m 755 /tmp/tmp.KL6SmsUjfF/v2ray /usr/local/bin/v2ray
++ [[ -f /tmp/tmp.KL6SmsUjfF/v2ctl ]]
++ [[ -f /usr/local/bin/v2ctl ]]
++ install -d /usr/local/share/v2ray
++ [[ ! -f /usr/local/share/v2ray/.undat ]]
++ install_file geoip.dat
++ NAME=geoip.dat
++ [[ geoip.dat == \v\2\r\a\y ]]
++ [[ geoip.dat == \v\2\c\t\l ]]
++ [[ geoip.dat == \g\e\o\i\p\.\d\a\t ]]
++ install -m 644 /tmp/tmp.KL6SmsUjfF/geoip.dat /usr/local/share/v2ray/geoip.dat
++ install_file geosite.dat
++ NAME=geosite.dat
++ [[ geosite.dat == \v\2\r\a\y ]]
++ [[ geosite.dat == \v\2\c\t\l ]]
++ [[ geosite.dat == \g\e\o\i\p\.\d\a\t ]]
++ [[ geosite.dat == \g\e\o\s\i\t\e\.\d\a\t ]]
++ install -m 644 /tmp/tmp.KL6SmsUjfF/geosite.dat /usr/local/share/v2ray/geosite.dat
++ [[ -z '' ]]
++ [[ ! -d /usr/local/etc/v2ray ]]
++ install -d /usr/local/etc/v2ray
++ echo '{}'
++ CONFIG_NEW=1
++ [[ -n '' ]]
++ [[ ! -d /var/log/v2ray/ ]]
++ id nobody
++ grep -qw nogroup
++ install -d -m 700 -o nobody -g nobody /var/log/v2ray/
++ install -m 600 -o nobody -g nobody /dev/null /var/log/v2ray/access.log
++ install -m 600 -o nobody -g nobody /dev/null /var/log/v2ray/error.log
++ LOG=1
++ install_startup_service_file
++ get_current_version
++ /usr/local/bin/v2ray -version
+++ /usr/local/bin/v2ray version
+++ awk 'NR==1 {print $2}'
++ VERSION=5.4.1
++ CURRENT_VERSION=v5.4.1
+++ echo 5.4.1
+++ sed 's/-.*//'
+++ awk -F. '{print $1}'
++ [[ 5 -gt 4 ]]
++ START_COMMAND='/usr/local/bin/v2ray run'
++ install -m 644 /tmp/tmp.KL6SmsUjfF/systemd/system/v2ray.service /etc/systemd/system/v2ray.service
++ install -m 644 /tmp/tmp.KL6SmsUjfF/systemd/system/v2ray@.service /etc/systemd/system/v2ray@.service
++ mkdir -p /etc/systemd/system/v2ray.service.d
++ mkdir -p /etc/systemd/system/v2ray@.service.d/
++ [[ -n '' ]]
++ rm -f /etc/systemd/system/v2ray.service.d/10-donot_touch_multi_conf.conf /etc/systemd/system/v2ray@.service.d/10-donot_touch_multi_conf.conf
++ echo '# In case you have a good reason to do so, duplicate this file in the same directory and make your customizes there.
+# Or all changes you made will be lost!  # Refer: https://www.freedesktop.org/software/systemd/man/systemd.unit.html
+[Service]
+ExecStart=
+ExecStart=/usr/local/bin/v2ray run -config /usr/local/etc/v2ray/config.json'
++ echo '# In case you have a good reason to do so, duplicate this file in the same directory and make your customizes there.
+# Or all changes you made will be lost!  # Refer: https://www.freedesktop.org/software/systemd/man/systemd.unit.html
+[Service]
+ExecStart=
+ExecStart=/usr/local/bin/v2ray run -config /usr/local/etc/v2ray/%i.json'
++ echo 'info: Systemd service files have been installed successfully!'
+info: Systemd service files have been installed successfully!
++ echo 'warning: The following are the actual parameters for the v2ray service startup.'
+warning: The following are the actual parameters for the v2ray service startup.
++ echo 'warning: Please make sure the configuration file path is correctly set.'
+warning: Please make sure the configuration file path is correctly set.
++ systemd_cat_config /etc/systemd/system/v2ray.service
++ systemd-analyze --help
++ grep -qw cat-config
++ systemd-analyze --no-pager cat-config /etc/systemd/system/v2ray.service
+# /etc/systemd/system/v2ray.service
+[Unit]
+Description=V2Ray Service
+Documentation=https://www.v2fly.org/
+After=network.target nss-lookup.target
+
+[Service]
+User=nobody
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/v2ray run -config /usr/local/etc/v2ray/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/v2ray.service.d/10-donot_touch_single_conf.conf
+# In case you have a good reason to do so, duplicate this file in the same directory and make your customizes there.
+# Or all changes you made will be lost!  # Refer: https://www.freedesktop.org/software/systemd/man/systemd.unit.html
+[Service]
+ExecStart=
+ExecStart=/usr/local/bin/v2ray run -config /usr/local/etc/v2ray/config.json
++ echo
+
++ [[ x = x\y ]]
++ systemctl daemon-reload
++ SYSTEMD=1
++ echo 'installed: /usr/local/bin/v2ray'
+installed: /usr/local/bin/v2ray
++ [[ -f /usr/local/bin/v2ctl ]]
++ [[ ! -f /usr/local/share/v2ray/.undat ]]
++ echo 'installed: /usr/local/share/v2ray/geoip.dat'
+installed: /usr/local/share/v2ray/geoip.dat
++ echo 'installed: /usr/local/share/v2ray/geosite.dat'
+installed: /usr/local/share/v2ray/geosite.dat
++ [[ 1 -eq 1 ]]
++ echo 'installed: /usr/local/etc/v2ray/config.json'
+installed: /usr/local/etc/v2ray/config.json
++ [[ '' -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ echo 'installed: /var/log/v2ray/'
+installed: /var/log/v2ray/
++ echo 'installed: /var/log/v2ray/access.log'
+installed: /var/log/v2ray/access.log
++ echo 'installed: /var/log/v2ray/error.log'
+installed: /var/log/v2ray/error.log
++ [[ 1 -eq 1 ]]
++ echo 'installed: /etc/systemd/system/v2ray.service'
+installed: /etc/systemd/system/v2ray.service
++ echo 'installed: /etc/systemd/system/v2ray@.service'
+installed: /etc/systemd/system/v2ray@.service
++ rm -r /tmp/tmp.KL6SmsUjfF
++ echo 'removed: /tmp/tmp.KL6SmsUjfF'
+removed: /tmp/tmp.KL6SmsUjfF
++ [[ '' -eq 1 ]]
++ echo 'info: V2Ray v5.4.1 is installed.'
+info: V2Ray v5.4.1 is installed.
++ echo 'You may need to execute a command to remove dependent software: dnf remove curl unzip'
+You may need to execute a command to remove dependent software: dnf remove curl unzip
++ [[ '' -eq 1 ]]
++ echo 'Please execute the command: systemctl enable v2ray; systemctl start v2ray'
+Please execute the command: systemctl enable v2ray; systemctl start v2ray
+[root@Server-72d26e11-5ed2-4f04-adfb-bc9c4911a4c3 ABCDE]# 
+
