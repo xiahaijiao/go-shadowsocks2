@@ -1,0 +1,15 @@
+
+{
+  "inbounds": [{
+    "port": 10087, // 服务器监听端口，必须和上面的一样
+    "protocol": "vmess",
+    "settings": {
+      "clients": [{ "id": "b831381d-6324-4d53-ad4f-8cda48b30811" }]
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}
+
