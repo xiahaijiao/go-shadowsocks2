@@ -23,6 +23,42 @@ ufw allow 10086/tcp
 ufw show added
 
 
+
+cat << EOF > /usr/lib/systemd/system/shadowsocks2.service
+[Unit]
+Description=shadowsocks2
+Documentation=https://prometheus.io/
+After=network.target
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/opt/socket/shadowsocks2 \
+-s 'ss://AEAD_CHACHA20_POLY1305:123456@:10086' -verbose
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+systemctl daemon-reload
+systemctl enable shadowsocks2.service
+#启动
+systemctl start shadowsocks2.service
+#停止
+systemctl stop shadowsocks2.service
+#重启
+systemctl restart shadowsocks2.service
+
+
+journalctl -u shadowsocks2
+
+
+
+
 ```
 
 
