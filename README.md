@@ -1,11 +1,11 @@
 # 源码安装
 ```bash
 
-   yum install -y golang
-   yum install -y yum-utils wget telnet net-tools zip  
-   yum install -y gcc gcc-c++  make cmake  git boost-devel libarchive libX11
-   make
-   go-shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:your-password@:8488' -verbose
+yum install -y golang
+yum install -y yum-utils wget telnet net-tools zip  
+yum install -y gcc gcc-c++  make cmake  git boost-devel libarchive libX11
+make
+go-shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:your-password@:8488' -verbose
 ./shadowsocks2-linux -s 'ss://AEAD_CHACHA20_POLY1305:123456@:10086' -verbose
 
 arm
