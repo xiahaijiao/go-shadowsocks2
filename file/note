@@ -1,6 +1,13 @@
 关闭官方分支
 aaaaaa
 
+
+   7 git add *
+   8 git status
+   9 git commit -m "fore update"
+  10 git push -f origin master
+
+
 -------
 wget https://github.com/xiahaijiao/go-shadowsocks2/raw/master/file/docker.zip
 
