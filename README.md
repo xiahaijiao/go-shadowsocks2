@@ -1,3 +1,15 @@
+# git强制更新
+```bash
+
+
+   7 git add *
+   8 git status
+   9 git commit -m "fore update"
+  10 git push -f origin master
+
+
+```
+
 # docker
 https://hub.docker.com/r/xiahaijiao/h-shgroup
 
@@ -7,7 +19,6 @@ https://github.com/xiahaijiao/go-shadowsocks2
 https://github.com/shadowsocks/shadowsocks-android
 https://github.com/shadowsocks
 https://github.com/shadowsocks/ShadowsocksX-NG
-
 
 # 源码安装
 ```bash
