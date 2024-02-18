@@ -11,14 +11,13 @@
 ```
 
 # docker
-https://hub.docker.com/r/xiahaijiao/h-shgroup
-
-https://github.com/xiahaijiao/go-shadowsocks2
+* https://hub.docker.com/r/xiahaijiao/h-shgroup
+* https://github.com/xiahaijiao/go-shadowsocks2
 
 # 源码
-https://github.com/shadowsocks/shadowsocks-android
-https://github.com/shadowsocks
-https://github.com/shadowsocks/ShadowsocksX-NG
+* https://github.com/shadowsocks/shadowsocks-android
+* https://github.com/shadowsocks
+* https://github.com/shadowsocks/ShadowsocksX-NG
 
 # 源码安装
 ```bash
