@@ -11,6 +11,7 @@
 wget https://github.com/xiahaijiao/go-shadowsocks2/raw/master/file/docker.zip
 wget https://github.com/xiahaijiao/go-shadowsocks2/raw/master/file/find_n_p_random.zip
 
+docker exec -it sagemath8.4 bash
 
 ```
 
