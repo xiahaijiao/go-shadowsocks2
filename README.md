@@ -2,6 +2,9 @@
 ```bash
 
 
+
+
+
    7 git add *
    8 git status
    9 git commit -m "fore update"
